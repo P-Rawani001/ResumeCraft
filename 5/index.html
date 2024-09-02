@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formal Resume</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-size: 9px;
+        }
+        .resume {
+            max-width: 800px;
+            margin: 10px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 18px;
+        }
+        h2 {
+            font-size: 12px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 2px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        h3 {
+            font-size: 10px;
+            margin: 5px 0 2px;
+        }
+        p {
+            margin: 0 0 2px;
+        }
+        .header {
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-size: 9px;
+        }
+        .section {
+            margin-bottom: 10px;
+        }
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 5px;
+        }
+        .education-item p, .experience-item p, .project-item p {
+            margin: 0;
+            font-size: 9px;
+        }
+        ul {
+            margin: 2px 0;
+            padding-left: 15px;
+        }
+        li {
+            margin-bottom: 1px;
+        }
+        .skills-list {
+            columns: 2;
+        }
+        #downloadPDF {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        @media print {
+            body, .resume {
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+        }
+        #downloadPDF:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume" id="resume">
+        <div class="header">
+            <h1 id="name">Sahasra Ranjan</h1>
+            <div class="contact-info">
+                <p id="email">Email: sahasraranjan@gmail.com | Mobile: +91-916-2095-758 | Portfolio: www.cse.iitb.ac.in/~sahasra/ | Github: github.com/sahasrasrjn/</p>
+            </div>
+        </div>
+
+        <div class="section" id="education">
+            <h2>Education and Scholastic Achievements</h2>
+            <div class="education-item">
+                <h3>Indian Institute of Technology, Bombay</h3>
+                <p>Mumbai, India | Bachelor of Technology, Computer Science and Engineering | July 2019 - Present</p>
+            </div>
+            <ul>
+                <li>Institute of Academic Excellence Award (2021, 2022)</li>
+                <li>AIR 127 in JEE (Advanced) out of 2,40,000 candidates (2019)</li>
+                <li>AIR 224 in JEE Mains out of 1.2 million candidates (2019)</li>
+                <li>Selected for Physics, Chemistry and Mathematics Olympiads (2019)</li>
+                <li>KVPY Fellowship recipient (2019)</li>
+                <li>NTSE scholarship by NCERT, Govt. of India (2017)</li>
+            </ul>
+        </div>
+
+        <div class="section" id="publications">
+            <h2>Publications</h2>
+            <ol>
+                <li>Alexander Krull, Sahasra Ranjan, Martin K. M. Engqvist, Martin J. Lercher: The substrate scopes of enzymes: a general prediction model based on machine and deep learning. mBio - a Nature Communications journal, 2022</li>
+            </ol>
+        </div>
+
+        <div class="section" id="experience">
+            <h2>Research and Work Experience</h2>
+            <div class="experience-item">
+                <h3>Multi Constrained Code-Switched Text Modelling | Guide: Prof. Preethi Jyothi, CSALT Lab | B.Tech. Project | Autumn 2022 - Present</h3>
+                <ul>
+                    <li>Developing a generalized framework for code-switched text generation with multiple constraints</li>
+                    <li>Exploring MLM techniques to improve code-switched text generation model</li>
+                    <li>Implementing Frequency MLM technique for improved text generation without language labels</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Snapshot Metadata Collection | Xanadu Solutions | Remote, Canada | Software Engineering Internship | Summer 2022</h3>
+                <ul>
+                    <li>Developed GO algorithm for snapshot tool in cloud data backup and recovery system</li>
+                    <li>Implemented mechanism to track expired critical data snapshots</li>
+                    <li>Created framework to periodically remove unnecessary snapshots from database</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Protein Language Modeling with ESMI-u2v | Prof. Martin J. Lercher, Alexander Krull | HHU, Düsseldorf, Germany | Research Internship | Summer 2021</h3>
+                <ul>
+                    <li>Developed BERT-based model for high-dimensional enzyme sequence representations</li>
+                    <li>Adapted ESM-1b model to build E2E model outperforming existing SOTA</li>
+                    <li>Improved task accuracy from 79.8% to 87.5%</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="projects">
+            <h2>Key Projects</h2>
+            <div class="project-item">
+                <h3>SELCON: Subset Dataset Selection | Guide: Prof. Ganesh Ramakrishnan | Web Project | Spring 2022</h3>
+                <ul>
+                    <li>Developed subset dataset selection algorithm based on Controlled Generalization Error</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <h3>Video Denoising using Low-Rank Matrix Completion | Guide: Prof. Ajit Rajwade | Course Project: Advanced Image Processing | Spring 2021</h3>
+                <ul>
+                    <li>Applied Adaptive Median Filtering for removing impulsive noise from video spatial domain</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <h3>SnapMath - Image to LaTeX converter | Institute Technical Summer Project | Summer 2020</h3>
+                <ul>
+                    <li>Implemented CNN and LSTM based model for generating LaTeX expressions from input equations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" id="skills">
+            <h2>Skills Summary</h2>
+            <ul class="skills-list">
+                <li>Programming: C++, Python, Go, Java, Ruby, AWK, TypeScript, SQL, VHDL</li>
+                <li>Data Science: PyTorch, TensorFlow, Keras, NumPy, MATLAB, Octave, Pandas, Matplotlib, OpenCV</li>
+                <li>Frameworks: Git, LaTeX, Docker, Quartus, Django, Angular, React, NodeJS, HTML5, CSS</li>
+            </ul>
+        </div>
+
+        <div class="section" id="positions">
+            <h2>Positions of Responsibility</h2>
+            <ul>
+                <li>Teaching Assistant, CS753: Foundations of Machine Learning (Aug 2022 - Nov 2022)</li>
+                <li>Seasons of Code 2021, Mentor, Web and Coding Club, IIT Bombay (May 2021 - July 2021)</li>
+                <li>Core Member, Electronics and Robotics Club, IIT Bombay (May 2020 - April 2021)</li>
+                <li>Team Member, DevCom - Development Committee, IIT Bombay (May 2020 - April 2021)</li>
+            </ul>
+        </div>
+
+        <div class="section" id="extracurriculars">
+            <h2>Extracurriculars</h2>
+            <ul>
+                <li>Performed Indian classical group dance during Annual Hostel Dance Show event (2022)</li>
+                <li>Completed Guitar learning course under Summer School of Cult, Symphony: music club of IITB (2019)</li>
+            </ul>
+        </div>
+    </div>
+    <button id="downloadPDF">Download as PDF</button>
+
+    <script>
+        document.querySelector('.resume').contentEditable = true;
+
+        function updateContent(id, content) {
+            document.getElementById(id).textContent = content;
+        }
+
+        function addListItem(listId, content) {
+            const list = document.getElementById(listId);
+            const li = document.createElement('li');
+            li.textContent = content;
+            list.appendChild(li);
+        }
+
+        function removeListItem(listId, index) {
+            const list = document.getElementById(listId);
+            if (list.children.length > index) {
+                list.removeChild(list.children[index]);
+            }
+        }
+
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+        }
+
+        document.getElementById('downloadPDF').addEventListener('click', function() {
+            const element = document.getElementById('resume');
+            const opt = {
+                margin: [5, 5, 5, 5],
+                filename: 'Aritra_Samui.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 4,
+                    useCORS: true,
+                    logging: true,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                },
+                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+            };
+
+            this.style.display = 'none';
+
+            html2pdf().set(opt).from(element).save().then(function() {
+                document.getElementById('downloadPDF').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
